@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+body {
+    background-color: #121c28;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.expodev p {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    
+}
+
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+
+.dart {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+header {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF; /* Texto branco para header */
+}
+
+nav ul {
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    color: #FFFFFF; /* Cor branca para os itens do menu */
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #FFFFFF; /* Cor branca para os links */
+}
+
+main {
+    padding: 20px;
+    background: linear-gradient(to bottom, #121c28, #1a2a3a, #00bfff);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto; /* Adicionado margem superior e inferior */
+    color: #FFFFFF; /* Texto branco para o conteúdo principal */
+}
+
+
+.expodev img {
+box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+margin-left: 25px;
+gap: 16px;
+max-width: 480px;
+max-height: 700px;
+border-radius: 20px;    
+}
+
+
+.expodev {
+    margin-top: 0px; /* Espaço entre a seção expodev e o main */
+    padding: 20px;
+    background: linear-gradient(to bottom, #121c28, #1a2a3a, #00bfff);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto; /* Adicionado margem superior e inferior */
+    color: #FFFFFF; /* Texto branco para o conteúdo principal */
+}
+
+.expodev img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos para os flip cards */
+.flip-card {
+    background-color: transparent;
+    width: 340px; /* Largura dos cards */
+    height: 240px; /* Altura dos cards */
+    perspective: 1000px; /* Efeito 3D */
+    position: relative;
+    border-radius: 10px;
+    margin: 10px; /* Espaçamento entre os cards */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s, box-shadow 0.3s, transform 0.3s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg) scale(1.05); /* Flip + zoom */
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Sombra individual para cada imagem na frente */
+.flip-card-front {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra padrão */
+}
+
+.flip-card-front img,
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Transição suave para o zoom */
+}
+
+.flip-card:hover .flip-card-front img,
+.flip-card:hover .flip-card-back img {
+    transform: scale(1.1); /* Efeito de zoom nas imagens */
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #1a2a3a; /* Cor de fundo do verso */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Efeitos de hover para o flip card */
+.flip-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.flip-card:hover::after {
+    opacity: 1;
+    inset: 10px; /* Ajuste o tamanho da borda */
+}
+
+/* Conteúdo dentro do flip card */
+.content {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: white;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+    transform: translateY(10px);
+}
+
+.flip-card:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .flip-card {
+        width: 100%; /* Cards ocupam toda a largura em dispositivos móveis */
+        height: auto;
+    }
+}
